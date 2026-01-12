@@ -1,0 +1,496 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/12/2026 2:59:53 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MONICAORREA"
+  DTS:CreatorName="MONICAORREA\monic"
+  DTS:DTSID="{B3D8F667-2E66-415E-AACA-B682D15A18D8}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5397.1"
+  DTS:LocaleID="3082"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{CF4FD721-8E72-45A3-A0E1-6E493FC219D9}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CM_SQL_DW]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{361AC513-9445-4488-8068-825CDAEDEC10}"
+      DTS:ObjectName="CM_SQL_DW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=MONICAORREA;Initial Catalog=dw_superstore;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{361AC513-9445-4488-8068-825CDAEDEC10}MONICAORREA.dw_superstore;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CM_SQL_STG]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{BC9FE5A6-120C-413B-951D-235B3FF8C630}"
+      DTS:ObjectName="CM_SQL_STG">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=MONICAORREA;Initial Catalog=stg_superstore;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{BC9FE5A6-120C-413B-951D-235B3FF8C630}MONICAORREA.stg_superstore;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT_DimGeography"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{18C0C761-3DF5-4822-BC59-71EC57E0E287}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT_DimGeography"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT_DimGeography\DST_Dim_Geography"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="DST_Dim_Geography"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[DimGeography]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_DimGeography\DST_Dim_Geography.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CM_SQL_DW]"
+                  connectionManagerRefId="Package.ConnectionManagers[CM_SQL_DW]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_DimGeography\DST_Dim_Geography.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_DimGeography\DST_Dim_Geography.Inputs[Entrada de destino de OLE DB].Columns[City]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="City"
+                      externalMetadataColumnId="Package\DFT_DimGeography\DST_Dim_Geography.Inputs[Entrada de destino de OLE DB].ExternalColumns[City]"
+                      lineageId="Package\DFT_DimGeography\SCR_stg_Superstore.Outputs[Salida de origen de OLE DB].Columns[City]" />
+                    <inputColumn
+                      refId="Package\DFT_DimGeography\DST_Dim_Geography.Inputs[Entrada de destino de OLE DB].Columns[State]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="State"
+                      externalMetadataColumnId="Package\DFT_DimGeography\DST_Dim_Geography.Inputs[Entrada de destino de OLE DB].ExternalColumns[State]"
+                      lineageId="Package\DFT_DimGeography\SCR_stg_Superstore.Outputs[Salida de origen de OLE DB].Columns[State]" />
+                    <inputColumn
+                      refId="Package\DFT_DimGeography\DST_Dim_Geography.Inputs[Entrada de destino de OLE DB].Columns[Country]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Country"
+                      externalMetadataColumnId="Package\DFT_DimGeography\DST_Dim_Geography.Inputs[Entrada de destino de OLE DB].ExternalColumns[Country]"
+                      lineageId="Package\DFT_DimGeography\SCR_stg_Superstore.Outputs[Salida de origen de OLE DB].Columns[Country]" />
+                    <inputColumn
+                      refId="Package\DFT_DimGeography\DST_Dim_Geography.Inputs[Entrada de destino de OLE DB].Columns[Region]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Region"
+                      externalMetadataColumnId="Package\DFT_DimGeography\DST_Dim_Geography.Inputs[Entrada de destino de OLE DB].ExternalColumns[Region]"
+                      lineageId="Package\DFT_DimGeography\SCR_stg_Superstore.Outputs[Salida de origen de OLE DB].Columns[Region]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_DimGeography\DST_Dim_Geography.Inputs[Entrada de destino de OLE DB].ExternalColumns[GeographyKey]"
+                      dataType="i4"
+                      name="GeographyKey" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_DimGeography\DST_Dim_Geography.Inputs[Entrada de destino de OLE DB].ExternalColumns[City]"
+                      dataType="wstr"
+                      length="100"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_DimGeography\DST_Dim_Geography.Inputs[Entrada de destino de OLE DB].ExternalColumns[State]"
+                      dataType="wstr"
+                      length="50"
+                      name="State" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_DimGeography\DST_Dim_Geography.Inputs[Entrada de destino de OLE DB].ExternalColumns[Country]"
+                      dataType="wstr"
+                      length="50"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_DimGeography\DST_Dim_Geography.Inputs[Entrada de destino de OLE DB].ExternalColumns[Region]"
+                      dataType="wstr"
+                      length="50"
+                      name="Region" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_DimGeography\DST_Dim_Geography.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\DFT_DimGeography\DST_Dim_Geography.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_DimGeography\DST_Dim_Geography.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_DimGeography\DST_Dim_Geography.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_DimGeography\DST_Dim_Geography.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_DimGeography\DST_Dim_Geography.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_DimGeography\SCR_stg_Superstore"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="SCR_stg_Superstore"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DISTINCT
+    City,
+    State,
+    Country,
+    Region
+FROM dbo.stg_superstore
+WHERE City IS NOT NULL;</property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_DimGeography\SCR_stg_Superstore.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CM_SQL_STG]"
+                  connectionManagerRefId="Package.ConnectionManagers[CM_SQL_STG]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT_DimGeography\SCR_stg_Superstore.Outputs[Salida de origen de OLE DB]"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_DimGeography\SCR_stg_Superstore.Outputs[Salida de origen de OLE DB].Columns[City]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_DimGeography\SCR_stg_Superstore.Outputs[Salida de origen de OLE DB].ExternalColumns[City]"
+                      length="100"
+                      lineageId="Package\DFT_DimGeography\SCR_stg_Superstore.Outputs[Salida de origen de OLE DB].Columns[City]"
+                      name="City"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_DimGeography\SCR_stg_Superstore.Outputs[Salida de origen de OLE DB].Columns[State]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_DimGeography\SCR_stg_Superstore.Outputs[Salida de origen de OLE DB].ExternalColumns[State]"
+                      length="50"
+                      lineageId="Package\DFT_DimGeography\SCR_stg_Superstore.Outputs[Salida de origen de OLE DB].Columns[State]"
+                      name="State"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_DimGeography\SCR_stg_Superstore.Outputs[Salida de origen de OLE DB].Columns[Country]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_DimGeography\SCR_stg_Superstore.Outputs[Salida de origen de OLE DB].ExternalColumns[Country]"
+                      length="50"
+                      lineageId="Package\DFT_DimGeography\SCR_stg_Superstore.Outputs[Salida de origen de OLE DB].Columns[Country]"
+                      name="Country"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_DimGeography\SCR_stg_Superstore.Outputs[Salida de origen de OLE DB].Columns[Region]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_DimGeography\SCR_stg_Superstore.Outputs[Salida de origen de OLE DB].ExternalColumns[Region]"
+                      length="50"
+                      lineageId="Package\DFT_DimGeography\SCR_stg_Superstore.Outputs[Salida de origen de OLE DB].Columns[Region]"
+                      name="Region"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_DimGeography\SCR_stg_Superstore.Outputs[Salida de origen de OLE DB].ExternalColumns[City]"
+                      dataType="wstr"
+                      length="100"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_DimGeography\SCR_stg_Superstore.Outputs[Salida de origen de OLE DB].ExternalColumns[State]"
+                      dataType="wstr"
+                      length="50"
+                      name="State" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_DimGeography\SCR_stg_Superstore.Outputs[Salida de origen de OLE DB].ExternalColumns[Country]"
+                      dataType="wstr"
+                      length="50"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_DimGeography\SCR_stg_Superstore.Outputs[Salida de origen de OLE DB].ExternalColumns[Region]"
+                      dataType="wstr"
+                      length="50"
+                      name="Region" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT_DimGeography\SCR_stg_Superstore.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_DimGeography\SCR_stg_Superstore.Outputs[Salida de error de origen de OLE DB].Columns[City]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\DFT_DimGeography\SCR_stg_Superstore.Outputs[Salida de error de origen de OLE DB].Columns[City]"
+                      name="City" />
+                    <outputColumn
+                      refId="Package\DFT_DimGeography\SCR_stg_Superstore.Outputs[Salida de error de origen de OLE DB].Columns[State]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT_DimGeography\SCR_stg_Superstore.Outputs[Salida de error de origen de OLE DB].Columns[State]"
+                      name="State" />
+                    <outputColumn
+                      refId="Package\DFT_DimGeography\SCR_stg_Superstore.Outputs[Salida de error de origen de OLE DB].Columns[Country]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT_DimGeography\SCR_stg_Superstore.Outputs[Salida de error de origen de OLE DB].Columns[Country]"
+                      name="Country" />
+                    <outputColumn
+                      refId="Package\DFT_DimGeography\SCR_stg_Superstore.Outputs[Salida de error de origen de OLE DB].Columns[Region]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT_DimGeography\SCR_stg_Superstore.Outputs[Salida de error de origen de OLE DB].Columns[Region]"
+                      name="Region" />
+                    <outputColumn
+                      refId="Package\DFT_DimGeography\SCR_stg_Superstore.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_DimGeography\SCR_stg_Superstore.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_DimGeography\SCR_stg_Superstore.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_DimGeography\SCR_stg_Superstore.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT_DimGeography.Paths[Salida de origen de OLE DB]"
+              endId="Package\DFT_DimGeography\DST_Dim_Geography.Inputs[Entrada de destino de OLE DB]"
+              name="Salida de origen de OLE DB"
+              startId="Package\DFT_DimGeography\SCR_stg_Superstore.Outputs[Salida de origen de OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="174.4,41.6"
+          Id="Package\DFT_DimGeography"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT_DimGeography">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="176.8,41.6"
+          Id="Package\DFT_DimGeography\SCR_stg_Superstore"
+          TopLeft="220.833321267532,165.533332182235" />
+        <NodeLayout
+          Size="180.8,41.6"
+          Id="Package\DFT_DimGeography\DST_Dim_Geography"
+          TopLeft="239.999986886979,324.999997739991" />
+        <EdgeLayout
+          Id="Package\DFT_DimGeography.Paths[Salida de origen de OLE DB]"
+          TopLeft="309.233321267532,207.133332182235">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="21.1666656194463,117.866665557755"
+              Start="0,0"
+              End="21.1666656194463,110.366665557755">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.9333327788777" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,54.9333327788777"
+                    Point2="0,58.9333327788777"
+                    Point3="4,58.9333327788777" />
+                  <mssgle:LineSegment
+                    End="17.1666656194463,58.9333327788777" />
+                  <mssgle:CubicBezierSegment
+                    Point1="17.1666656194463,58.9333327788777"
+                    Point2="21.1666656194463,58.9333327788777"
+                    Point3="21.1666656194463,62.9333327788777" />
+                  <mssgle:LineSegment
+                    End="21.1666656194463,110.366665557755" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_DimGeography\SCR_stg_Superstore">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_DimGeography\DST_Dim_Geography">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

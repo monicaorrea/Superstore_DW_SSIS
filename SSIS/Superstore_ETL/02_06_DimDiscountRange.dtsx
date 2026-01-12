@@ -1,0 +1,405 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/12/2026 3:17:43 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MONICAORREA"
+  DTS:CreatorName="MONICAORREA\monic"
+  DTS:DTSID="{F1B1FFE9-E529-42B1-AE27-E3D75ACD2901}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5397.1"
+  DTS:LocaleID="3082"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{C430426E-F93E-4C3E-9E85-7649CA70F81D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CN_SQL_DW]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{067843DB-5CA7-42ED-8BCB-06856F1F3770}"
+      DTS:ObjectName="CN_SQL_DW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=MONICAORREA;Initial Catalog=dw_superstore;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{067843DB-5CA7-42ED-8BCB-06856F1F3770}MONICAORREA.dw_superstore;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CN_SQL_STG]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D7E74708-BF59-4894-A303-EE875521D0AB}"
+      DTS:ObjectName="CN_SQL_STG">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=MONICAORREA;Initial Catalog=stg_superstore;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{D7E74708-BF59-4894-A303-EE875521D0AB}MONICAORREA.stg_superstore;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT_DimDiscountRange"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{A932264E-BC04-4229-B5B2-E22B37BB7937}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT_DimDiscountRange"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT_DimDiscountRange\DST_Dim_DiscountRange"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="DST_Dim_DiscountRange"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[DimDiscountRange]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_DimDiscountRange\DST_Dim_DiscountRange.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CN_SQL_DW]"
+                  connectionManagerRefId="Package.ConnectionManagers[CN_SQL_DW]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_DimDiscountRange\DST_Dim_DiscountRange.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_DimDiscountRange\DST_Dim_DiscountRange.Inputs[Entrada de destino de OLE DB].Columns[DiscountRange]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="DiscountRange"
+                      externalMetadataColumnId="Package\DFT_DimDiscountRange\DST_Dim_DiscountRange.Inputs[Entrada de destino de OLE DB].ExternalColumns[DiscountRange]"
+                      lineageId="Package\DFT_DimDiscountRange\SCR_stg_Superstore.Outputs[Salida de origen de OLE DB].Columns[DiscountRange]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_DimDiscountRange\DST_Dim_DiscountRange.Inputs[Entrada de destino de OLE DB].ExternalColumns[DiscountRangeKey]"
+                      dataType="i4"
+                      name="DiscountRangeKey" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_DimDiscountRange\DST_Dim_DiscountRange.Inputs[Entrada de destino de OLE DB].ExternalColumns[DiscountRange]"
+                      dataType="wstr"
+                      length="50"
+                      name="DiscountRange" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_DimDiscountRange\DST_Dim_DiscountRange.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\DFT_DimDiscountRange\DST_Dim_DiscountRange.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_DimDiscountRange\DST_Dim_DiscountRange.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_DimDiscountRange\DST_Dim_DiscountRange.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_DimDiscountRange\DST_Dim_DiscountRange.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_DimDiscountRange\DST_Dim_DiscountRange.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_DimDiscountRange\SCR_stg_Superstore"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="SCR_stg_Superstore"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">-- elegimos rangos según información bd stg
+SELECT DISTINCT
+    CAST(
+        CASE 
+            WHEN Discount = 0 THEN N'0%'
+            WHEN Discount &gt; 0 AND Discount &lt;= 10 THEN N'0% - 10%'
+            WHEN Discount &gt; 10 AND Discount &lt;= 20 THEN N'10% - 20%'
+            WHEN Discount &gt; 20 AND Discount &lt;= 30 THEN N'20% - 30%'
+            WHEN Discount &gt; 30 AND Discount &lt;= 40 THEN N'30% - 40%'
+            WHEN Discount &gt; 40 AND Discount &lt;= 50 THEN N'40% - 50%'
+            ELSE N'&gt; 50%'
+        END
+    AS NVARCHAR(50)) AS DiscountRange
+FROM dbo.stg_superstore
+WHERE Discount IS NOT NULL;</property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_DimDiscountRange\SCR_stg_Superstore.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CN_SQL_STG]"
+                  connectionManagerRefId="Package.ConnectionManagers[CN_SQL_STG]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT_DimDiscountRange\SCR_stg_Superstore.Outputs[Salida de origen de OLE DB]"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_DimDiscountRange\SCR_stg_Superstore.Outputs[Salida de origen de OLE DB].Columns[DiscountRange]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_DimDiscountRange\SCR_stg_Superstore.Outputs[Salida de origen de OLE DB].ExternalColumns[DiscountRange]"
+                      length="50"
+                      lineageId="Package\DFT_DimDiscountRange\SCR_stg_Superstore.Outputs[Salida de origen de OLE DB].Columns[DiscountRange]"
+                      name="DiscountRange"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_DimDiscountRange\SCR_stg_Superstore.Outputs[Salida de origen de OLE DB].ExternalColumns[DiscountRange]"
+                      dataType="wstr"
+                      length="50"
+                      name="DiscountRange" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT_DimDiscountRange\SCR_stg_Superstore.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_DimDiscountRange\SCR_stg_Superstore.Outputs[Salida de error de origen de OLE DB].Columns[DiscountRange]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\DFT_DimDiscountRange\SCR_stg_Superstore.Outputs[Salida de error de origen de OLE DB].Columns[DiscountRange]"
+                      name="DiscountRange" />
+                    <outputColumn
+                      refId="Package\DFT_DimDiscountRange\SCR_stg_Superstore.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_DimDiscountRange\SCR_stg_Superstore.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_DimDiscountRange\SCR_stg_Superstore.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_DimDiscountRange\SCR_stg_Superstore.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT_DimDiscountRange.Paths[Salida de origen de OLE DB]"
+              endId="Package\DFT_DimDiscountRange\DST_Dim_DiscountRange.Inputs[Entrada de destino de OLE DB]"
+              name="Salida de origen de OLE DB"
+              startId="Package\DFT_DimDiscountRange\SCR_stg_Superstore.Outputs[Salida de origen de OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="194.4,41.6"
+          Id="Package\DFT_DimDiscountRange"
+          TopLeft="72.4999960387749,97.9333326523172" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT_DimDiscountRange">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="200,41.6"
+          Id="Package\DFT_DimDiscountRange\DST_Dim_DiscountRange"
+          TopLeft="175.833323726224,214.066665178074" />
+        <NodeLayout
+          Size="176.8,41.6"
+          Id="Package\DFT_DimDiscountRange\SCR_stg_Superstore"
+          TopLeft="173.333323862818,107.466665919357" />
+        <EdgeLayout
+          Id="Package\DFT_DimDiscountRange.Paths[Salida de origen de OLE DB]"
+          TopLeft="261.733323862818,149.066665919357">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="14.099999863406,64.9999992587169"
+              Start="0,0"
+              End="14.099999863406,57.4999992587169">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.4999996293585" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.4999996293585"
+                    Point2="0,32.4999996293585"
+                    Point3="4,32.4999996293585" />
+                  <mssgle:LineSegment
+                    End="10.099999863406,32.4999996293585" />
+                  <mssgle:CubicBezierSegment
+                    Point1="10.099999863406,32.4999996293585"
+                    Point2="14.099999863406,32.4999996293585"
+                    Point3="14.099999863406,36.4999996293585" />
+                  <mssgle:LineSegment
+                    End="14.099999863406,57.4999992587169" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_DimDiscountRange\DST_Dim_DiscountRange">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_DimDiscountRange\SCR_stg_Superstore">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

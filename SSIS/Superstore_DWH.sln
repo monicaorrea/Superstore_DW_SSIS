@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36616.10 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "Superstore_ETL", "Superstore_ETL\Superstore_ETL.dtproj", "{D0BCDC15-0FA6-8D37-66FB-6354EB46967E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D0BCDC15-0FA6-8D37-66FB-6354EB46967E}.Development|Default.ActiveCfg = Development
+		{D0BCDC15-0FA6-8D37-66FB-6354EB46967E}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9FF3B4FC-069E-4DEB-B304-39E42D60E2FB}
+	EndGlobalSection
+EndGlobal

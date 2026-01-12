@@ -1,0 +1,1607 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/11/2026 8:39:01 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MONICAORREA"
+  DTS:CreatorName="MONICAORREA\monic"
+  DTS:DTSID="{8A31989C-DFA2-4C5F-9E0E-2FE2D9503405}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5397.1"
+  DTS:LocaleID="3082"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="43"
+  DTS:VersionGUID="{FE043E0F-5AB4-448B-8321-9AE3044657BA}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CN_FLAT_SuperstoreCSV]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{B4A77744-9F2B-49CF-AC43-7407EF353348}"
+      DTS:ObjectName="CN_FLAT_SuperstoreCSV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="3082"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\Data\Sample - Superstore.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Row ID"
+              DTS:DTSID="{9A8BD864-0C94-4989-91A0-333387C3A587}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Order ID"
+              DTS:DTSID="{C7770DD7-8546-43E4-AD6C-E87591BDE109}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Order Date"
+              DTS:DTSID="{5BB697AA-A33C-4D0C-8081-6FEB83044CAC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Ship Date"
+              DTS:DTSID="{ABB1B2C9-5E19-4405-A3A7-B4645A18FA19}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Ship Mode"
+              DTS:DTSID="{8597F291-3CA4-4C48-9D83-8992E7950BA6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Customer ID"
+              DTS:DTSID="{8BEDABD8-CE2A-44F7-ABAF-0093D87873F9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Customer Name"
+              DTS:DTSID="{26EEA227-1385-4D94-B25D-A82ED42A61E5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Segment"
+              DTS:DTSID="{9E2AB604-F6AC-4757-A953-AA1F10B1137D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Country"
+              DTS:DTSID="{2BFB7790-6A31-46F3-9DE2-1C19171CB9A7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="City"
+              DTS:DTSID="{CA54142E-5C12-4949-8A74-C1B9BC296A8D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="State"
+              DTS:DTSID="{B58836D8-2793-4C4A-AC41-FC8941B0E42B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Postal Code"
+              DTS:DTSID="{50297835-86AE-4780-AE86-53945EB97C32}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Region"
+              DTS:DTSID="{9F3CFE47-06E5-4096-9C33-6BBDE96ABD89}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Product ID"
+              DTS:DTSID="{71A5918A-C329-46FB-B28E-80A213671D94}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Category"
+              DTS:DTSID="{6D41688F-7316-4E0E-9899-0ECBDCEAA8FE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Sub-Category"
+              DTS:DTSID="{3FB86588-A0DB-4697-9DDA-F74B3FFBE7A8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Product Name"
+              DTS:DTSID="{A9DDC15D-9F27-48C0-8818-C89FAD81068F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Sales"
+              DTS:DTSID="{A65B0B08-AD9F-4605-8417-D8061013E52E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Quantity"
+              DTS:DTSID="{187DCB45-7D82-458B-B060-B715E03FEC9C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Discount"
+              DTS:DTSID="{E6E1A9DB-9EBB-4310-BE29-B0A9B80F04B3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Profit"
+              DTS:DTSID="{ED33EDDF-0E01-4713-AD29-0EBB3DECF27E}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CN_SQL_STG]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{5186C872-DA9F-4DB2-B760-E322E3C211B2}"
+      DTS:ObjectName="CN_SQL_STG">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=MONICAORREA;Initial Catalog=stg_superstore;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{5186C872-DA9F-4DB2-B760-E322E3C211B2}MONICAORREA.stg_superstore;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DF_CSV_to_STG_Superstore"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{F34EA0D8-1E25-434B-AD2C-3C367C8B0B00}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DF_CSV_to_STG_Superstore"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DF_CSV_to_STG_Superstore\Conversión de datos"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Conversión de datos;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Conversión de datos"
+              name="Conversión de datos"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DF_CSV_to_STG_Superstore\Conversión de datos.Inputs[Entrada de conversión de datos]"
+                  name="Entrada de conversión de datos">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[Order Date]"
+                      cachedDataType="date"
+                      cachedName="Order Date"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Order Date]" />
+                    <inputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[Ship Date]"
+                      cachedDataType="date"
+                      cachedName="Ship Date"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Ship Date]" />
+                    <inputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[Quantity]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Quantity"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Quantity]" />
+                    <inputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[Profit]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Profit"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Profit]" />
+                    <inputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[Sales]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Sales"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Sales]" />
+                    <inputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[Discount]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Discount"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Discount]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF_CSV_to_STG_Superstore\Conversión de datos.Outputs[Salida de conversión de datos]"
+                  exclusionGroup="1"
+                  name="Salida de conversión de datos"
+                  synchronousInputId="Package\DF_CSV_to_STG_Superstore\Conversión de datos.Inputs[Entrada de conversión de datos]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of Order Date]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of Order Date]"
+                      name="Copy of Order Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                          name="SourceInputColumnLineageID">#{Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Order Date]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of Ship Date]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of Ship Date]"
+                      name="Copy of Ship Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                          name="SourceInputColumnLineageID">#{Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Ship Date]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of Quantity]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of Quantity]"
+                      name="Copy of Quantity"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                          name="SourceInputColumnLineageID">#{Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Quantity]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of Profit]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of Profit]"
+                      name="Copy of Profit"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                          name="SourceInputColumnLineageID">#{Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Profit]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of Sales]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of Sales]"
+                      name="Copy of Sales"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                          name="SourceInputColumnLineageID">#{Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Sales]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of Discount]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of Discount]"
+                      name="Copy of Discount"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                          name="SourceInputColumnLineageID">#{Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Discount]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DF_CSV_to_STG_Superstore\Conversión de datos.Outputs[Salida de error de conversión de datos]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de conversión de datos"
+                  synchronousInputId="Package\DF_CSV_to_STG_Superstore\Conversión de datos.Inputs[Entrada de conversión de datos]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="DST_OLEDB_STG_Superstore"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[stg_superstore]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CN_SQL_STG]"
+                  connectionManagerRefId="Package.ConnectionManagers[CN_SQL_STG]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].Columns[Category]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Category"
+                      externalMetadataColumnId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].ExternalColumns[Category]"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Category]" />
+                    <inputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].Columns[City]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="City"
+                      externalMetadataColumnId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].ExternalColumns[City]"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[City]" />
+                    <inputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].Columns[Country]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Country"
+                      externalMetadataColumnId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].ExternalColumns[Country]"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Country]" />
+                    <inputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].Columns[Region]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Region"
+                      externalMetadataColumnId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].ExternalColumns[Region]"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Region]" />
+                    <inputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].Columns[Segment]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Segment"
+                      externalMetadataColumnId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].ExternalColumns[Segment]"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Segment]" />
+                    <inputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].Columns[State]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="State"
+                      externalMetadataColumnId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].ExternalColumns[State]"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[State]" />
+                    <inputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].Columns[Ship Mode]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Ship Mode"
+                      externalMetadataColumnId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].ExternalColumns[Ship Mode]"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Ship Mode]" />
+                    <inputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].Columns[Customer Name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Customer Name"
+                      externalMetadataColumnId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].ExternalColumns[Customer Name]"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Customer Name]" />
+                    <inputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].Columns[Postal Code]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Postal Code"
+                      externalMetadataColumnId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].ExternalColumns[Postal Code]"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Postal Code]" />
+                    <inputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].Columns[Sub-Category]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Sub-Category"
+                      externalMetadataColumnId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].ExternalColumns[Sub-Category]"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Sub-Category]" />
+                    <inputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].Columns[Product Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Product Name"
+                      externalMetadataColumnId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].ExternalColumns[Product Name]"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Product Name]" />
+                    <inputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].Columns[Copy of Discount]"
+                      cachedDataType="decimal"
+                      cachedName="Copy of Discount"
+                      externalMetadataColumnId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].ExternalColumns[Discount]"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of Discount]" />
+                    <inputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].Columns[Copy of Profit]"
+                      cachedDataType="decimal"
+                      cachedName="Copy of Profit"
+                      externalMetadataColumnId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].ExternalColumns[Profit]"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of Profit]" />
+                    <inputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].Columns[Copy of Quantity]"
+                      cachedDataType="i4"
+                      cachedName="Copy of Quantity"
+                      externalMetadataColumnId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].ExternalColumns[Quantity]"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of Quantity]" />
+                    <inputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].Columns[Copy of Ship Date]"
+                      cachedDataType="date"
+                      cachedName="Copy of Ship Date"
+                      externalMetadataColumnId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].ExternalColumns[Ship Date]"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of Ship Date]" />
+                    <inputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].Columns[Copy of Order Date]"
+                      cachedDataType="date"
+                      cachedName="Copy of Order Date"
+                      externalMetadataColumnId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].ExternalColumns[Order Date]"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of Order Date]" />
+                    <inputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].Columns[Copy of Sales]"
+                      cachedDataType="decimal"
+                      cachedName="Copy of Sales"
+                      externalMetadataColumnId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].ExternalColumns[Sales]"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of Sales]" />
+                    <inputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].Columns[Customer ID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Customer ID"
+                      externalMetadataColumnId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].ExternalColumns[Customer ID]"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Customer ID]" />
+                    <inputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].Columns[Order ID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Order ID"
+                      externalMetadataColumnId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].ExternalColumns[Order ID]"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Order ID]" />
+                    <inputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].Columns[Product ID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Product ID"
+                      externalMetadataColumnId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].ExternalColumns[Product ID]"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Product ID]" />
+                    <inputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].Columns[Row ID]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Row ID"
+                      externalMetadataColumnId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].ExternalColumns[Row ID]"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Row ID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].ExternalColumns[Category]"
+                      dataType="wstr"
+                      length="50"
+                      name="Category" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].ExternalColumns[City]"
+                      dataType="wstr"
+                      length="100"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].ExternalColumns[Country]"
+                      dataType="wstr"
+                      length="50"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].ExternalColumns[Discount]"
+                      dataType="numeric"
+                      name="Discount"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].ExternalColumns[Profit]"
+                      dataType="numeric"
+                      name="Profit"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].ExternalColumns[Quantity]"
+                      dataType="i4"
+                      name="Quantity" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].ExternalColumns[Region]"
+                      dataType="wstr"
+                      length="50"
+                      name="Region" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].ExternalColumns[Sales]"
+                      dataType="numeric"
+                      name="Sales"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].ExternalColumns[Segment]"
+                      dataType="wstr"
+                      length="50"
+                      name="Segment" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].ExternalColumns[State]"
+                      dataType="wstr"
+                      length="50"
+                      name="State" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].ExternalColumns[Row ID]"
+                      dataType="i4"
+                      name="Row ID" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].ExternalColumns[Order ID]"
+                      dataType="wstr"
+                      length="20"
+                      name="Order ID" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].ExternalColumns[Order Date]"
+                      dataType="dbDate"
+                      name="Order Date" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].ExternalColumns[Ship Date]"
+                      dataType="dbDate"
+                      name="Ship Date" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].ExternalColumns[Ship Mode]"
+                      dataType="wstr"
+                      length="50"
+                      name="Ship Mode" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].ExternalColumns[Customer ID]"
+                      dataType="wstr"
+                      length="20"
+                      name="Customer ID" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].ExternalColumns[Customer Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Customer Name" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].ExternalColumns[Postal Code]"
+                      dataType="wstr"
+                      length="20"
+                      name="Postal Code" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].ExternalColumns[Product ID]"
+                      dataType="wstr"
+                      length="50"
+                      name="Product ID" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].ExternalColumns[Sub-Category]"
+                      dataType="wstr"
+                      length="50"
+                      name="Sub-Category" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB].ExternalColumns[Product Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Product Name" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Origen de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Origen de archivo plano"
+              localeId="3082"
+              name="SRC_CSV_Superstore"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si las columnas de longitud cero se tratan como NULL."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre de una columna de salida que contiene el nombre de archivo. Si no se especifica ningún nombre, no se genera ninguna columna de salida con el nombre de archivo."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CN_FLAT_SuperstoreCSV]"
+                  connectionManagerRefId="Package.ConnectionManagers[CN_FLAT_SuperstoreCSV]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano]"
+                  name="Salida de origen de archivo plano">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Category]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].ExternalColumns[Category]"
+                      length="50"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Category]"
+                      name="Category"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[City]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].ExternalColumns[City]"
+                      length="100"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[City]"
+                      name="City"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Country]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].ExternalColumns[Country]"
+                      length="50"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Country]"
+                      name="Country"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Customer ID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].ExternalColumns[Customer ID]"
+                      length="50"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Customer ID]"
+                      name="Customer ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Customer Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].ExternalColumns[Customer Name]"
+                      length="50"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Customer Name]"
+                      name="Customer Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Discount]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].ExternalColumns[Discount]"
+                      length="20"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Discount]"
+                      name="Discount"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Order Date]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].ExternalColumns[Order Date]"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Order Date]"
+                      name="Order Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Order ID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].ExternalColumns[Order ID]"
+                      length="50"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Order ID]"
+                      name="Order ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Product ID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].ExternalColumns[Product ID]"
+                      length="50"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Product ID]"
+                      name="Product ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Product Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].ExternalColumns[Product Name]"
+                      length="255"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Product Name]"
+                      name="Product Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Profit]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].ExternalColumns[Profit]"
+                      length="20"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Profit]"
+                      name="Profit"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Quantity]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].ExternalColumns[Quantity]"
+                      length="10"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Quantity]"
+                      name="Quantity"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Region]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].ExternalColumns[Region]"
+                      length="50"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Region]"
+                      name="Region"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Row ID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].ExternalColumns[Row ID]"
+                      length="10"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Row ID]"
+                      name="Row ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Sales]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].ExternalColumns[Sales]"
+                      length="20"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Sales]"
+                      name="Sales"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Segment]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].ExternalColumns[Segment]"
+                      length="50"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Segment]"
+                      name="Segment"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Ship Date]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].ExternalColumns[Ship Date]"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Ship Date]"
+                      name="Ship Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Ship Mode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].ExternalColumns[Ship Mode]"
+                      length="50"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Ship Mode]"
+                      name="Ship Mode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[State]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].ExternalColumns[State]"
+                      length="50"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[State]"
+                      name="State"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Postal Code]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].ExternalColumns[Postal Code]"
+                      length="20"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Postal Code]"
+                      name="Postal Code"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Sub-Category]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].ExternalColumns[Sub-Category]"
+                      length="50"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].Columns[Sub-Category]"
+                      name="Sub-Category"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].ExternalColumns[Category]"
+                      dataType="wstr"
+                      length="50"
+                      name="Category" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].ExternalColumns[City]"
+                      dataType="wstr"
+                      length="100"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].ExternalColumns[Country]"
+                      dataType="wstr"
+                      length="50"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].ExternalColumns[Customer ID]"
+                      dataType="wstr"
+                      length="50"
+                      name="Customer ID" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].ExternalColumns[Customer Name]"
+                      dataType="wstr"
+                      length="50"
+                      name="Customer Name" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].ExternalColumns[Discount]"
+                      dataType="wstr"
+                      length="20"
+                      name="Discount" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].ExternalColumns[Order Date]"
+                      dataType="date"
+                      name="Order Date" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].ExternalColumns[Order ID]"
+                      dataType="wstr"
+                      length="50"
+                      name="Order ID" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].ExternalColumns[Product ID]"
+                      dataType="wstr"
+                      length="50"
+                      name="Product ID" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].ExternalColumns[Product Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Product Name" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].ExternalColumns[Profit]"
+                      dataType="wstr"
+                      length="20"
+                      name="Profit" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].ExternalColumns[Quantity]"
+                      dataType="wstr"
+                      length="10"
+                      name="Quantity" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].ExternalColumns[Region]"
+                      dataType="wstr"
+                      length="50"
+                      name="Region" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].ExternalColumns[Row ID]"
+                      dataType="wstr"
+                      length="10"
+                      name="Row ID" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].ExternalColumns[Sales]"
+                      dataType="wstr"
+                      length="20"
+                      name="Sales" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].ExternalColumns[Segment]"
+                      dataType="wstr"
+                      length="50"
+                      name="Segment" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].ExternalColumns[Ship Date]"
+                      dataType="date"
+                      name="Ship Date" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].ExternalColumns[Ship Mode]"
+                      dataType="wstr"
+                      length="50"
+                      name="Ship Mode" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].ExternalColumns[State]"
+                      dataType="wstr"
+                      length="50"
+                      name="State" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].ExternalColumns[Postal Code]"
+                      dataType="wstr"
+                      length="20"
+                      name="Postal Code" />
+                    <externalMetadataColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano].ExternalColumns[Sub-Category]"
+                      dataType="wstr"
+                      length="50"
+                      name="Sub-Category" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de error de origen de archivo plano]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de archivo plano">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Columna de salida de error de origen de archivo plano"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
+                      name="Columna de salida de error de origen de archivo plano" />
+                    <outputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DF_CSV_to_STG_Superstore.Paths[Salida de conversión de datos]"
+              endId="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore.Inputs[Entrada de destino de OLE DB]"
+              name="Salida de conversión de datos"
+              startId="Package\DF_CSV_to_STG_Superstore\Conversión de datos.Outputs[Salida de conversión de datos]" />
+            <path
+              refId="Package\DF_CSV_to_STG_Superstore.Paths[Salida de origen de archivo plano]"
+              endId="Package\DF_CSV_to_STG_Superstore\Conversión de datos.Inputs[Entrada de conversión de datos]"
+              name="Salida de origen de archivo plano"
+              startId="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore.Outputs[Salida de origen de archivo plano]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\EP_Load_Dimensions"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Tarea Ejecutar paquete"
+      DTS:DTSID="{635CAA48-77C9-4DBD-8CD6-C20847FA90EC}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EP_Load_Dimensions"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>02_Load_Dimensions.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{42CA25ED-1EFE-4D9B-AC47-1AE1D8E79E44}"
+      DTS:From="Package\DF_CSV_to_STG_Superstore"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\EP_Load_Dimensions" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="217.6,41.6"
+          Id="Package\DF_CSV_to_STG_Superstore"
+          TopLeft="46.6666641169124,79.7333327788777" />
+        <NodeLayout
+          Size="181.6,41.6"
+          Id="Package\EP_Load_Dimensions"
+          TopLeft="347.499981013438,80.5999994395177" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="264.266664116912,100.966666109198">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="83.2333168965254,0"
+              Start="0,0"
+              End="75.7333168965254,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="75.7333168965254,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DF_CSV_to_STG_Superstore">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="184,41.6"
+          Id="Package\DF_CSV_to_STG_Superstore\SRC_CSV_Superstore"
+          TopLeft="96.9999985545874,60.9999990910292" />
+        <NodeLayout
+          Size="224,41.6"
+          Id="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore"
+          TopLeft="74.49999897182,327.499995201826" />
+        <NodeLayout
+          Size="173.6,41.6"
+          Id="Package\DF_CSV_to_STG_Superstore\Conversión de datos"
+          TopLeft="174.16665715062,180.266665413115" />
+        <EdgeLayout
+          Id="Package\DF_CSV_to_STG_Superstore.Paths[Salida de origen de archivo plano]"
+          TopLeft="188.999998554587,102.599999091029">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="71.9666585960325,77.6666663220856"
+              Start="0,0"
+              End="71.9666585960325,70.1666663220856">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.8333331610428" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.8333331610428"
+                    Point2="0,38.8333331610428"
+                    Point3="4,38.8333331610428" />
+                  <mssgle:LineSegment
+                    End="67.9666585960325,38.8333331610428" />
+                  <mssgle:CubicBezierSegment
+                    Point1="67.9666585960325,38.8333331610428"
+                    Point2="71.9666585960325,38.8333331610428"
+                    Point3="71.9666585960325,42.8333331610428" />
+                  <mssgle:LineSegment
+                    End="71.9666585960325,70.1666663220856" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DF_CSV_to_STG_Superstore.Paths[Salida de conversión de datos]"
+          TopLeft="260.96665715062,221.866665413115">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-74.4666581787999,105.633329788711"
+              Start="0,0"
+              End="-74.4666581787999,98.1333297887112">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.8166648943556" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,48.8166648943556"
+                    Point2="0,52.8166648943556"
+                    Point3="-4,52.8166648943556" />
+                  <mssgle:LineSegment
+                    End="-70.4666581787999,52.8166648943556" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-70.4666581787999,52.8166648943556"
+                    Point2="-74.4666581787999,52.8166648943556"
+                    Point3="-74.4666581787999,56.8166648943556" />
+                  <mssgle:LineSegment
+                    End="-74.4666581787999,98.1333297887112" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DF_CSV_to_STG_Superstore\DST_OLEDB_STG_Superstore">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

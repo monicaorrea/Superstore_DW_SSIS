@@ -1,0 +1,184 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/11/2026 8:47:11 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MONICAORREA"
+  DTS:CreatorName="MONICAORREA\monic"
+  DTS:DTSID="{84277C01-CBD0-4EEE-9739-947DC6CF3BA9}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5397.1"
+  DTS:LocaleID="3082"
+  DTS:ObjectName="02_Load_Dimensions"
+  DTS:PackageType="5"
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{CDC563F1-871F-4CB8-98C0-6C540AA1C7B5}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\EQ_Load_DimCustomer"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Tarea Ejecutar paquete"
+      DTS:DTSID="{5D8683DB-9B12-46AC-8F8B-D7AC8BF89A1F}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EQ_Load_DimCustomer"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>02_01_DimCustomer.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\EQ_Load_DimDiscountRange"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Tarea Ejecutar paquete"
+      DTS:DTSID="{b544d8a2-1196-4aff-95fe-70c03672901d}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EQ_Load_DimDiscountRange"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>02_06_DimDiscountRange.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\EQ_Load_DimGeography"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Tarea Ejecutar paquete"
+      DTS:DTSID="{494a5072-34d9-4154-abfa-c20c15f27785}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EQ_Load_DimGeography"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>02_03_DimGeography.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\EQ_Load_DimProduct"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Tarea Ejecutar paquete"
+      DTS:DTSID="{a4473009-4f8b-46e3-89e3-e5d3e7090884}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EQ_Load_DimProduct"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>02_02_DimProduct.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\EQ_Load_DimProfitability"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Tarea Ejecutar paquete"
+      DTS:DTSID="{32b356b8-35bd-4cc3-894d-ef7969929fed}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EQ_Load_DimProfitability"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>02_07_DimProfitability.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\EQ_Load_DimSegment"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Tarea Ejecutar paquete"
+      DTS:DTSID="{18672947-584a-41aa-9a4d-240fe71d7910}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EQ_Load_DimSegment"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>02_04_DimSegment.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\EQ_Load_DimShippingMode"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Tarea Ejecutar paquete"
+      DTS:DTSID="{804dbc77-30ae-49a0-ba3b-41a5e4fdc8c0}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EQ_Load_DimShippingMode"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>02_05_DimShippingMode.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="192,41.6"
+          Id="Package\EQ_Load_DimCustomer"
+          TopLeft="44.1666642535064,70.199999511838" />
+        <NodeLayout
+          Size="182.4,41.6"
+          Id="Package\EQ_Load_DimProduct"
+          TopLeft="44.1666642535065,148.199998969436" />
+        <NodeLayout
+          Size="198.4,41.6"
+          Id="Package\EQ_Load_DimGeography"
+          TopLeft="36.6666646632884,224.466665105753" />
+        <NodeLayout
+          Size="188,41.6"
+          Id="Package\EQ_Load_DimSegment"
+          TopLeft="46.6666641169125,306.799997866551" />
+        <NodeLayout
+          Size="212.8,41.6"
+          Id="Package\EQ_Load_DimShippingMode"
+          TopLeft="36.6666646632883,396.933330573109" />
+        <NodeLayout
+          Size="217.6,41.6"
+          Id="Package\EQ_Load_DimDiscountRange"
+          TopLeft="279.166651413673,75.3999994756778" />
+        <NodeLayout
+          Size="197.6,41.6"
+          Id="Package\EQ_Load_DimProfitability"
+          TopLeft="287.499984291693,169.866665485435" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
