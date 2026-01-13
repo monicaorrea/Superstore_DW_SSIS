@@ -4,11 +4,11 @@ CREATE DATABASE stg_superstore
 USE stg_superstore;
 CREATE TABLE stg_superstore (
     RowID INT,
-    OrderID NVARCHAR(20),
+    OrderID NVARCHAR(50),
     OrderDate DATE,
     ShipDate DATE,
     ShipMode NVARCHAR(50),
-    CustomerID NVARCHAR(20),
+    CustomerID NVARCHAR(255),
     CustomerName NVARCHAR(255),
     Segment NVARCHAR(50),
     Country NVARCHAR(50),

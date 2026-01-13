@@ -52,3 +52,5 @@ CREATE TABLE dbo.FactSales (
     CONSTRAINT FK_FactSales_DimDate_Ship
         FOREIGN KEY (ShipDateKey) REFERENCES dbo.DimDate(DateKey)
 );
+
+
